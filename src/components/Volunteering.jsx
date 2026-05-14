@@ -18,7 +18,7 @@ export default function Volunteering() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        04 — Volunteering
+        Volunteering
       </motion.p>
       <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-balance">
         Giving <span className="gradient-text">back</span>

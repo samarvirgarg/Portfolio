@@ -3,9 +3,16 @@ import SectionWrapper from './SectionWrapper';
 import { personalInfo } from '../data';
 import { FiGithub, FiLinkedin, FiMail, FiSend } from 'react-icons/fi';
 
+const DevpostIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+    <path d="M6.002 1.2h12.004c2.595 0 3.794 1.51 3.794 3.794v14.012c0 2.285-1.199 3.794-3.794 3.794H6.002c-2.595 0-3.794-1.51-3.794-3.794V4.994c0-2.284 1.199-3.794 3.794-3.794zm6.39 14.9l3.5-4.1-3.5-4.1H9.602l3.5 4.1-3.5 4.1z"/>
+  </svg>
+);
+
 const socialLinks = [
   { icon: FiGithub, href: 'https://github.com/samarvirgarg', label: 'GitHub' },
   { icon: FiLinkedin, href: 'https://www.linkedin.com/in/samarvir/', label: 'LinkedIn' },
+  { icon: DevpostIcon, href: 'https://devpost.com/samarvirgarg', label: 'Devpost' },
   { icon: FiMail, href: 'mailto:samarvir.garg@mail.utoronto.ca', label: 'Email' },
 ];
 
@@ -19,7 +26,7 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          07 — Contact
+          Contact
         </motion.p>
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-balance">
           Let's <span className="gradient-text">connect</span>

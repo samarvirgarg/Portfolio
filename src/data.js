@@ -18,6 +18,7 @@ export const personalInfo = {
   email: "samarvir.garg@mail.utoronto.ca",
   github: "https://github.com/samarvirgarg",
   linkedin: "https://www.linkedin.com/in/samarvir/",
+  devpost: "https://devpost.com/samarvirgarg",
   twitter: "#",
   resumeUrl: "/Samarvir_Resume_Summer.pdf",
   resumeLabel: "Samarvir Garg - Resume",
@@ -102,6 +103,18 @@ export const experienceData = [
 export const projectsData = [
   {
     id: 1,
+    title: "Autonomous Biathlon Robot — UTRA HACKS 2026",
+    description:
+      "Designed and built an autonomous Arduino-based robot inspired by the Winter Olympics biathlon, balancing continuous motion with precision targeting. Implemented a modular C++ architecture on Arduino Uno R4 Minima with clear separation between hardware control, perception/calibration, and high-level behaviors. The robot navigated multiple course layouts using IR, ultrasonic, and color sensors, and reliably executed object manipulation and target alignment. Collaborated with a 4-person team, learning the full robotics stack in real time.",
+    tags: ["C++", "Arduino", "Embedded Systems", "Sensors"],
+    award: "2nd Overall & 1st Top Track — UTRA HACKS 2026",
+    github: "https://github.com/samarvirgarg/UTRA",
+    live: "https://devpost.com/software/utra-hacks-2026",
+    image: null,
+    featured: true,
+  },
+  {
+    id: 2,
     title: "Emergency Route Optimization System",
     description:
       "Built a backend routing engine with priority-based, maps-based path planning and multi-agent coordination for ambulance dispatch. Developed a lightweight REST-style API for emergency inputs, ambulance status updates, and routing decisions. Integrated SQLite for persistence and validated logic through a Java-based Becker Robots simulation — placed 3rd overall at UTEK 2026.",
@@ -113,15 +126,37 @@ export const projectsData = [
     featured: true,
   },
   {
-    id: 2,
+    id: 3,
     title: "FoodChain — FBLA Project",
     description:
       "Designed and developed a full-stack backend system using Java Spring Boot with a 3-layer (Controller–Service–Repository) architecture. Implemented RESTful APIs for managing restaurants, private chefs, and user search/filter functionality backed by a MySQL relational database. Applied CRUD operations, dependency injection, and modular backend design.",
     tags: ["Java", "Spring Boot", "MySQL", "MVC Architecture"],
-    github: "#", // PLACEHOLDER: Add your repo link
+    github: "https://github.com/samarvirgarg/hackathon-FoodChain-Project",
     live: null,
     image: null,
     featured: true,
+  },
+  {
+    id: 4,
+    title: "Log Rush — Arcade Game",
+    description:
+      "A fast-paced Pygame arcade game where a lumberjack cuts trees while logs fall from above, and the player moves left or right to catch them with a net. Features event handling, collision detection, timers, and randomized log spawning.",
+    tags: ["Python", "Pygame", "Game Dev"],
+    github: "https://github.com/samarvirgarg/Pygame_LogRush",
+    live: null,
+    image: null,
+    featured: false,
+  },
+  {
+    id: 5,
+    title: "Smart Playlist Generator",
+    description:
+      "A digital music player with playlist management and filtering logic. Users can add or remove songs, apply filters such as genre or artist, and generate random playlists dynamically using Pygame.",
+    tags: ["Python", "Pygame", "Data Filtering"],
+    github: "https://github.com/samarvirgarg/Pygame_SmartPlaylistGenerator",
+    live: null,
+    image: null,
+    featured: false,
   },
 ];
 
@@ -166,9 +201,9 @@ export const volunteeringData = [
 
 export const skillsData = {
   languages: ["Java", "Python", "C/C++", "SQL (Postgres)", "JavaScript", "HTML/CSS"],
-  frameworks: ["Spring Boot", "Pygame", "Becker"],
-  tools: ["Git", "VS Code", "Visual Studio", "IntelliJ", "Eclipse", "SQLite", "MySQL"],
-  concepts: ["REST APIs", "MVC Architecture", "Machine Learning", "Computer Vision", "Data Visualization", "Agile/Scrum"],
+  frameworks: ["Spring Boot", "Pygame", "Becker", "Arduino"],
+  tools: ["Git", "VS Code", "Visual Studio", "IntelliJ", "Eclipse", "SQLite", "MySQL", "NVIDIA Jetson"],
+  concepts: ["REST APIs", "MVC Architecture", "Embedded Systems", "Computer Vision", "Machine Learning", "Data Visualization"],
 };
 
 export const interestsData = [

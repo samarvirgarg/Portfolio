@@ -16,7 +16,7 @@ export default function About() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            01 — About
+            About
           </motion.p>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-balance">
             More than just a{' '}

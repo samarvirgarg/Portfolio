@@ -12,7 +12,7 @@ export default function Experience() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        02 — Experience & Leadership
+        Experience & Leadership
       </motion.p>
       <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-balance">
         Where I've <span className="gradient-text">grown</span>

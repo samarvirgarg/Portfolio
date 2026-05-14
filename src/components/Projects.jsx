@@ -15,7 +15,7 @@ export default function Projects() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        03 — Projects
+        Projects
       </motion.p>
       <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-balance">
         Things I've <span className="gradient-text">built</span>

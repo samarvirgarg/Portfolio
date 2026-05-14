@@ -18,7 +18,7 @@ export default function Skills() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        05 — Skills
+        Skills
       </motion.p>
       <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-balance">
         My <span className="gradient-text">toolkit</span>

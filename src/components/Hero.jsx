@@ -2,10 +2,17 @@ import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from 'react-icons/fi';
 import { personalInfo } from '../data';
 
+const DevpostIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+    <path d="M6.002 1.2h12.004c2.595 0 3.794 1.51 3.794 3.794v14.012c0 2.285-1.199 3.794-3.794 3.794H6.002c-2.595 0-3.794-1.51-3.794-3.794V4.994c0-2.284 1.199-3.794 3.794-3.794zm6.39 14.9l3.5-4.1-3.5-4.1H9.602l3.5 4.1-3.5 4.1z"/>
+  </svg>
+);
+
 export default function Hero() {
   const socialLinks = [
     { icon: FiGithub, href: personalInfo.github, label: 'GitHub' },
     { icon: FiLinkedin, href: personalInfo.linkedin, label: 'LinkedIn' },
+    { icon: DevpostIcon, href: personalInfo.devpost, label: 'Devpost' },
     { icon: FiMail, href: `mailto:${personalInfo.email}`, label: 'Email' },
   ];
 
