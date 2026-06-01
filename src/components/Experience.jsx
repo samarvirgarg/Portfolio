@@ -15,7 +15,7 @@ export default function Experience() {
         Experience & Leadership
       </motion.p>
       <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-balance">
-        Where I've <span className="gradient-text">grown</span>
+        Where I have <span className="gradient-text">grown</span>
       </h2>
 
       <div className="relative">

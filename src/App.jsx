@@ -20,7 +20,7 @@ export default function App() {
         <About />
         <Experience />
         <Projects />
-        <Volunteering />
+        {/* <Volunteering /> */}
         <Skills />
         <Interests />
         <Contact />

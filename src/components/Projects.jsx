@@ -18,7 +18,7 @@ export default function Projects() {
         Projects
       </motion.p>
       <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-balance">
-        Things I've <span className="gradient-text">built</span>
+        Things I have <span className="gradient-text">built</span>
       </h2>
 
       {/* Featured projects */}
