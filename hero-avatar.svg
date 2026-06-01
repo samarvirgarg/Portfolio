@@ -1,0 +1,66 @@
+<svg width="360" height="360" viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="avatarBg" x1="52" y1="28" x2="304" y2="332" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6C63FF" />
+      <stop offset="0.55" stop-color="#5B4EE6" />
+      <stop offset="1" stop-color="#00D4FF" />
+    </linearGradient>
+    <radialGradient id="avatarGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(180 116) rotate(90) scale(150)">
+      <stop stop-color="white" stop-opacity="0.28" />
+      <stop offset="1" stop-color="white" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="shirt" x1="100" y1="222" x2="258" y2="318" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#20244E" />
+      <stop offset="1" stop-color="#11162F" />
+    </linearGradient>
+    <linearGradient id="laptop" x1="92" y1="218" x2="266" y2="306" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0F2F8" />
+      <stop offset="1" stop-color="#BFC7D8" />
+    </linearGradient>
+    <linearGradient id="laptopBase" x1="96" y1="286" x2="264" y2="318" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D6DBE7" />
+      <stop offset="1" stop-color="#9BA6BB" />
+    </linearGradient>
+    <linearGradient id="hair" x1="109" y1="62" x2="245" y2="182" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5A3B28" />
+      <stop offset="1" stop-color="#2A170E" />
+    </linearGradient>
+  </defs>
+
+  <circle cx="180" cy="180" r="168" fill="url(#avatarBg)" />
+  <circle cx="180" cy="180" r="168" fill="url(#avatarGlow)" />
+  <circle cx="180" cy="180" r="165" stroke="rgba(255,255,255,0.2)" stroke-width="4" />
+
+  <path d="M95 308C105 256 136 228 180 228C224 228 255 256 265 308V322H95V308Z" fill="url(#shirt)" />
+  <path d="M146 217C154 230 165 237 180 237C195 237 206 230 214 217V204H146V217Z" fill="#DBAB87" />
+
+  <path d="M112 148C112 103.265 146.265 69 191 69C235.735 69 270 103.265 270 148V164C270 208.735 235.735 243 191 243C146.265 243 112 208.735 112 164V148Z" fill="#F5C8A4" />
+  <path d="M119 141C118.953 95.6679 149.303 57 194 57C227.56 57 254.164 74.229 264.625 101.942C267.814 110.39 269.79 119.693 270 129.539C257.558 129.444 243.828 126.167 229.045 119.792C214.699 113.606 202.83 105.813 193.5 96.5C188.087 108.587 177.258 119.111 161.182 128.071C148.142 135.342 133.747 140.193 118.748 142.54C118.262 142.616 119.001 141.715 119 141Z" fill="url(#hair)" />
+  <path d="M148 68C164.5 53.5 186 48 205 50.5C227 53.3947 247 66.5 260 83.5" stroke="#6F4A31" stroke-width="8" stroke-linecap="round" opacity="0.75" />
+  <path d="M236 82C244.667 87.3333 251.333 94.3333 256 103" stroke="#8A6141" stroke-width="8" stroke-linecap="round" opacity="0.85" />
+  <path d="M135 116C146.333 96.6667 162.667 82.6667 184 74" stroke="#7E573B" stroke-width="10" stroke-linecap="round" opacity="0.45" />
+
+  <ellipse cx="155" cy="159" rx="10" ry="11" fill="#2B1B14" />
+  <ellipse cx="211" cy="159" rx="10" ry="11" fill="#2B1B14" />
+  <circle cx="151" cy="155" r="2.5" fill="white" fill-opacity="0.9" />
+  <circle cx="207" cy="155" r="2.5" fill="white" fill-opacity="0.9" />
+
+  <rect x="125" y="138" width="54" height="40" rx="12" stroke="#222734" stroke-width="7" />
+  <rect x="183" y="138" width="54" height="40" rx="12" stroke="#222734" stroke-width="7" />
+  <path d="M179 157H183" stroke="#222734" stroke-width="7" stroke-linecap="round" />
+  <path d="M125 156H116" stroke="#222734" stroke-width="6" stroke-linecap="round" />
+  <path d="M237 156H246" stroke="#222734" stroke-width="6" stroke-linecap="round" />
+
+  <path d="M167 171C167 179.667 165.667 185 163 187" stroke="#D39676" stroke-width="3.5" stroke-linecap="round" />
+  <path d="M152 194C159 200.667 168.333 204 180 204C191.667 204 201 200.667 208 194" stroke="#B76A59" stroke-width="5" stroke-linecap="round" />
+  <path d="M142 140C148 133.333 155.333 130 164 130" stroke="#4A2D1D" stroke-width="5" stroke-linecap="round" />
+  <path d="M201 130C209.667 130 217 133.333 223 140" stroke="#4A2D1D" stroke-width="5" stroke-linecap="round" />
+
+  <path d="M104 298L117 221C118.833 210.333 127.795 202.5 138.618 202.5H221.382C232.205 202.5 241.167 210.333 243 221L256 298H104Z" fill="url(#laptop)" />
+  <path d="M92 298H268C271.314 298 274 300.686 274 304V308C274 314.627 268.627 320 262 320H98C91.3726 320 86 314.627 86 308V304C86 300.686 88.6863 298 92 298Z" fill="url(#laptopBase)" />
+  <path d="M171 235C171 230.029 175.029 226 180 226C184.971 226 189 230.029 189 235C189 239.971 184.971 244 180 244C175.029 244 171 239.971 171 235Z" fill="#EEF2FB" fill-opacity="0.85" />
+  <path d="M145 299H215" stroke="#8B94A6" stroke-width="3" stroke-linecap="round" opacity="0.45" />
+
+  <path d="M96 282C100.667 253.333 112 233.667 130 223" stroke="#F5C8A4" stroke-width="12" stroke-linecap="round" opacity="0.95" />
+  <path d="M264 282C259.333 253.333 248 233.667 230 223" stroke="#F5C8A4" stroke-width="12" stroke-linecap="round" opacity="0.95" />
+</svg>
