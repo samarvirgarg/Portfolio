@@ -59,7 +59,7 @@ export const experienceData = [
     role: 'AI Engineer Trainee',
     company: 'Trakop',
     location: 'Toronto, ON',
-    period: 'May 2024 to Present',
+    period: 'May 2026 to Present',
     description:
       'Developing AI based solutions for logistics and business automation using Python, TensorFlow, and OpenAI APIs. Working on projects related to inventory forecasting, delivery route optimization, and payment risk analysis while gaining hands on experience with AWS, Power BI, and Git through real world SaaS platform development.',
     tags: ['Python', 'TensorFlow', 'OpenAI APIs', 'AWS', 'Power BI', 'Git'],
