@@ -20,7 +20,7 @@ export const personalInfo = {
   linkedin: 'https://www.linkedin.com/in/samarvir/',
   devpost: 'https://devpost.com/samarvirgarg',
   twitter: '#',
-  resumeUrl: '/Samarvir_Resume_Summer.pdf',
+  resumeUrl: '/SamarvirGargResume.pdf',
   resumeLabel: 'Samarvir Garg Resume',
   profileImage: '/hero-avatar.svg',
 };
