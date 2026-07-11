@@ -10,15 +10,15 @@ export default function Projects() {
   return (
     <SectionWrapper id="projects">
       <motion.p
-        className="text-primary font-mono text-sm mb-2"
+        className="accent-text font-mono text-sm mb-2"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
         Projects
       </motion.p>
-      <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-balance">
-        Things I have <span className="gradient-text">built</span>
+      <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-balance theme-text">
+        Things I have <span className="accent-text">built</span>
       </h2>
 
       {/* Featured projects */}
@@ -33,19 +33,20 @@ export default function Projects() {
             whileHover={{ y: -6 }}
             className="glass glass-hover rounded-2xl overflow-hidden group"
           >
-            {/* Project image placeholder */}
-            <div className="h-48 bg-gradient-to-br from-primary/20 via-accent/10 to-glow-pink/10 flex items-center justify-center border-b border-white/5">
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto rounded-2xl bg-white/5 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors">
-                  <FiGithub className="w-7 h-7 text-white/30 group-hover:text-primary transition-colors" />
+            {/* Project image area */}
+            <div className="h-48 theme-bg-subtle flex items-center justify-center border-b theme-border relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10" />
+              <div className="relative text-center">
+                <div className="w-16 h-16 mx-auto rounded-2xl glass flex items-center justify-center mb-3">
+                  <span className="text-2xl font-display font-bold accent-text">{project.title.charAt(0)}</span>
                 </div>
-                <p className="text-white/20 text-sm">PLACEHOLDER: Project screenshot</p>
+                <p className="theme-text-muted text-xs font-mono">Project Preview</p>
               </div>
             </div>
 
             <div className="p-6">
               <div className="flex items-center gap-2 mb-2">
-                <h3 className="font-display text-xl font-semibold text-white group-hover:text-primary transition-colors">
+                <h3 className="font-display text-xl font-semibold theme-text group-hover:accent-text transition-colors">
                   {project.title}
                 </h3>
                 {project.award && (
@@ -54,14 +55,14 @@ export default function Projects() {
                   </span>
                 )}
               </div>
-              <p className="text-sm text-white/50 leading-relaxed mb-4">
+              <p className="text-sm theme-text-tertiary leading-relaxed mb-4">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 text-white/60"
+                    className="text-xs font-mono px-2.5 py-1 rounded-md theme-bg-subtle theme-text-secondary"
                   >
                     {tag}
                   </span>
@@ -73,7 +74,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-sm text-white/50 hover:text-primary transition-colors"
+                    className="flex items-center gap-1.5 text-sm theme-text-tertiary hover:accent-text transition-colors"
                   >
                     <FiGithub className="w-4 h-4" /> Code
                   </a>
@@ -83,7 +84,7 @@ export default function Projects() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-sm text-white/50 hover:text-accent transition-colors"
+                    className="flex items-center gap-1.5 text-sm theme-text-tertiary hover:accent-text transition-colors"
                   >
                     <FiExternalLink className="w-4 h-4" /> Live
                   </a>
@@ -108,19 +109,19 @@ export default function Projects() {
               className="glass glass-hover rounded-xl p-5 group"
             >
               <div className="flex items-start justify-between mb-2">
-                <h3 className="font-display font-semibold text-white group-hover:text-primary transition-colors">
+                <h3 className="font-display font-semibold theme-text group-hover:accent-text transition-colors">
                   {project.title}
                 </h3>
-                <FiGithub className="w-4 h-4 text-white/30 group-hover:text-primary transition-colors" />
+                <FiGithub className="w-4 h-4 theme-text-muted group-hover:accent-text transition-colors" />
               </div>
-              <p className="text-sm text-white/50 leading-relaxed mb-3">
+              <p className="text-sm theme-text-tertiary leading-relaxed mb-3">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs font-mono px-2 py-0.5 rounded bg-white/5 text-white/50"
+                    className="text-xs font-mono px-2 py-0.5 rounded theme-bg-subtle theme-text-tertiary"
                   >
                     {tag}
                   </span>

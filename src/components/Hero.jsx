@@ -21,36 +21,6 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Animated gradient orbs */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          animate={{
-            x: [0, 100, -50, 0],
-            y: [0, -80, 60, 0],
-            scale: [1, 1.2, 0.9, 1],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-          className="absolute -top-1/4 -left-1/4 w-[600px] h-[600px] rounded-full bg-glow-purple/20 blur-[120px]"
-        />
-        <motion.div
-          animate={{
-            x: [0, -80, 60, 0],
-            y: [0, 100, -50, 0],
-            scale: [1, 0.9, 1.3, 1],
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-          className="absolute -bottom-1/4 -right-1/4 w-[500px] h-[500px] rounded-full bg-glow-cyan/15 blur-[100px]"
-        />
-        <motion.div
-          animate={{
-            x: [0, 60, -80, 0],
-            y: [0, -60, 80, 0],
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
-          className="absolute top-1/3 right-1/4 w-[300px] h-[300px] rounded-full bg-glow-pink/10 blur-[80px]"
-        />
-      </div>
-
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
         <motion.div
@@ -68,7 +38,7 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
             </span>
-            <span className="text-sm text-white/70">Available for opportunities</span>
+            <span className="text-sm theme-text-secondary">Available for opportunities</span>
           </motion.div>
 
           <motion.h1
@@ -77,15 +47,15 @@ export default function Hero() {
             transition={{ delay: 0.3, duration: 0.7 }}
             className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6"
           >
-            <span className="text-white">Hi, I am </span>
-            <span className="gradient-text">{personalInfo.name}</span>
+            <span className="theme-text">Hi, I am </span>
+            <span className="accent-text">{personalInfo.name}</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-xl sm:text-2xl md:text-3xl text-white/50 font-light mb-4"
+            className="text-xl sm:text-2xl md:text-3xl theme-text-tertiary font-light mb-4"
           >
             {personalInfo.title}
           </motion.p>
@@ -94,7 +64,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-base sm:text-lg text-white/40 max-w-2xl mx-auto mb-10 text-balance"
+            className="text-base sm:text-lg theme-text-quaternary max-w-2xl mx-auto mb-10 text-balance"
           >
             {personalInfo.tagline}
           </motion.p>
@@ -116,14 +86,14 @@ export default function Hero() {
                 className="glass glass-hover rounded-xl p-3.5 group"
                 aria-label={label}
               >
-                <Icon className="w-5 h-5 text-white/70 group-hover:text-primary transition-colors" />
+                <Icon className="w-5 h-5 theme-text-secondary group-hover:accent-text transition-colors" />
               </motion.a>
             ))}
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="ml-2 bg-gradient-to-r from-primary to-accent text-white font-medium px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-primary/25 transition-shadow"
+              className="ml-2 accent-bg text-white font-medium px-6 py-3 rounded-xl hover:opacity-90 transition-opacity"
             >
               Get in Touch
             </motion.a>
@@ -142,10 +112,11 @@ export default function Hero() {
           href="#about"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-col items-center gap-2 text-white/30 hover:text-white/60 transition-colors"
+          className="flex flex-col items-center gap-2 theme-text-muted hover:theme-text-tertiary transition-colors"
+          aria-label="Scroll down to about section"
         >
           <span className="text-xs">Scroll</span>
-          <FiArrowDown className="w-4 h-4" />
+          <FiArrowDown className="w-4 h-4" aria-hidden="true" />
         </motion.a>
       </motion.div>
     </section>

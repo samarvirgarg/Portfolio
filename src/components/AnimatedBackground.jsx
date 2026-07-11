@@ -1,73 +1,68 @@
 import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
 
 export default function AnimatedBackground() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+    
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     let animationId;
-    let particles = [];
+    let time = 0;
+
+    // Simple floating dots
+    const dots = Array.from({ length: 40 }, () => ({
+      x: Math.random(),
+      y: Math.random(),
+      size: Math.random() * 2 + 1,
+      speedX: (Math.random() - 0.5) * 0.0002,
+      speedY: (Math.random() - 0.5) * 0.0002,
+      opacity: Math.random() * 0.3 + 0.1,
+    }));
 
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
 
-    const createParticles = () => {
-      particles = [];
-      const count = Math.min(60, Math.floor(window.innerWidth / 25));
-      for (let i = 0; i < count; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          size: Math.random() * 2 + 0.5,
-          speedX: (Math.random() - 0.5) * 0.4,
-          speedY: (Math.random() - 0.5) * 0.4,
-          opacity: Math.random() * 0.5 + 0.1,
-        });
-      }
-    };
-
-    const drawParticles = () => {
+    const draw = () => {
+      time++;
+      const isLight = document.documentElement.classList.contains('light');
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((p, i) => {
-        p.x += p.speedX;
-        p.y += p.speedY;
 
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
+      // Draw floating dots
+      dots.forEach((dot) => {
+        // Move dots slowly
+        dot.x += dot.speedX;
+        dot.y += dot.speedY;
 
+        // Wrap around edges
+        if (dot.x < -0.05) dot.x = 1.05;
+        if (dot.x > 1.05) dot.x = -0.05;
+        if (dot.y < -0.05) dot.y = 1.05;
+        if (dot.y > 1.05) dot.y = -0.05;
+
+        const x = dot.x * canvas.width;
+        const y = dot.y * canvas.height;
+        const alpha = dot.opacity * (isLight ? 0.4 : 0.6);
+
+        // Draw dot
+        ctx.fillStyle = isLight 
+          ? `rgba(108, 99, 255, ${alpha})` 
+          : `rgba(200, 200, 255, ${alpha})`;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(108, 99, 255, ${p.opacity})`;
+        ctx.arc(x, y, dot.size, 0, Math.PI * 2);
         ctx.fill();
-
-        // Connect nearby particles
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[j].x - p.x;
-          const dy = particles[j].y - p.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 150) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(108, 99, 255, ${0.06 * (1 - dist / 150)})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
       });
-      animationId = requestAnimationFrame(drawParticles);
+
+      animationId = requestAnimationFrame(draw);
     };
 
     resize();
-    createParticles();
-    drawParticles();
-    window.addEventListener('resize', () => { resize(); createParticles(); });
+    draw();
+    window.addEventListener('resize', resize);
 
     return () => {
       cancelAnimationFrame(animationId);
@@ -79,7 +74,7 @@ export default function AnimatedBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.7 }}
+      aria-hidden="true"
     />
   );
 }

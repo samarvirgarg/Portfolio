@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FiSun, FiMoon } from 'react-icons/fi';
 import { personalInfo } from '../data';
+import { useTheme } from '../context/ThemeContext';
 
 const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Blog', href: '#blog' },
   { label: 'Skills', href: '#skills' },
   { label: 'Interests', href: '#interests' },
   { label: 'Contact', href: '#contact' },
@@ -14,6 +17,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { isDark, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -34,14 +38,14 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/20'
+          ? 'backdrop-blur-xl shadow-lg border-b theme-overlay theme-border'
           : 'bg-transparent'
       }`}
     >
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 md:px-8 h-16 md:h-18">
         <a href="#" className="font-display font-bold text-lg tracking-tight">
-          <span className="gradient-text">{personalInfo.firstName}</span>
-          <span className="text-white/80 ml-1">{personalInfo.lastName}</span>
+          <span className="accent-text">{personalInfo.firstName}</span>
+          <span className="theme-text-secondary ml-1">{personalInfo.lastName}</span>
         </a>
 
         {/* Desktop nav */}
@@ -50,7 +54,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm text-white/60 hover:text-white px-3 py-2 rounded-lg transition-colors duration-200 hover:bg-white/5"
+                className="text-sm theme-text-secondary hover:text-[color:var(--color-text-primary)] px-3 py-2 rounded-lg transition-colors duration-200 theme-bg-subtle-hover"
               >
                 {link.label}
               </a>
@@ -58,25 +62,39 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden relative w-8 h-8 flex flex-col justify-center items-center gap-1.5"
-          aria-label="Toggle menu"
-        >
-          <motion.span
-            animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-            className="block w-6 h-0.5 bg-white rounded-full"
-          />
-          <motion.span
-            animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
-            className="block w-6 h-0.5 bg-white rounded-full"
-          />
-          <motion.span
-            animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-            className="block w-6 h-0.5 bg-white rounded-full"
-          />
-        </button>
+        {/* Theme toggle + Mobile hamburger */}
+        <div className="flex items-center gap-2">
+          <button
+            onClick={toggleTheme}
+            className="relative w-9 h-9 rounded-lg flex items-center justify-center transition-colors theme-bg-subtle-hover"
+            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {isDark ? (
+              <FiSun className="w-4 h-4 theme-text-secondary" />
+            ) : (
+              <FiMoon className="w-4 h-4 theme-text-secondary" />
+            )}
+          </button>
+
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden relative w-8 h-8 flex flex-col justify-center items-center gap-1.5"
+            aria-label="Toggle menu"
+          >
+            <motion.span
+              animate={mobileOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+              className="block w-6 h-0.5 theme-text rounded-full bg-current"
+            />
+            <motion.span
+              animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
+              className="block w-6 h-0.5 theme-text rounded-full bg-current"
+            />
+            <motion.span
+              animate={mobileOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+              className="block w-6 h-0.5 theme-text rounded-full bg-current"
+            />
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
@@ -87,7 +105,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-surface/95 backdrop-blur-xl border-b border-white/5"
+            className="md:hidden backdrop-blur-xl border-b theme-overlay theme-border"
           >
             <ul className="flex flex-col px-6 py-4 gap-1">
               {navLinks.map((link, i) => (
@@ -100,7 +118,7 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="block text-white/70 hover:text-white py-2.5 text-lg transition-colors"
+                    className="block theme-text-secondary hover:text-[color:var(--color-text-primary)] py-2.5 text-lg transition-colors"
                   >
                     {link.label}
                   </a>

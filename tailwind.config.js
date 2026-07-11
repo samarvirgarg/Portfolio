@@ -11,23 +11,17 @@ export default {
         primary: {
           DEFAULT: '#6C63FF',
           light: '#8B83FF',
-          dark: '#4A42E0',
+          dark: '#5a52e0',
         },
         accent: {
-          DEFAULT: '#00D4FF',
-          light: '#33DDFF',
-          dark: '#00A8CC',
+          DEFAULT: '#6C63FF',
+          light: '#8B83FF',
+          dark: '#5a52e0',
         },
         surface: {
-          DEFAULT: '#0A0A1A',
-          light: '#12122A',
-          lighter: '#1A1A3E',
-          card: 'rgba(255, 255, 255, 0.05)',
-        },
-        glow: {
-          purple: '#6C63FF',
-          cyan: '#00D4FF',
-          pink: '#FF6B9D',
+          DEFAULT: '#0f0f1a',
+          light: '#161625',
+          lighter: '#1e1e30',
         },
       },
       fontFamily: {

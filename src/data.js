@@ -20,7 +20,7 @@ export const personalInfo = {
   linkedin: 'https://www.linkedin.com/in/samarvir/',
   devpost: 'https://devpost.com/samarvirgarg',
   twitter: '#',
-  resumeUrl: '/Samarvir_Resume_Summer.pdf',
+  resumeUrl: '/Samarvir_Resume_Blueprint.pdf',
   resumeLabel: 'Samarvir Garg Resume',
   profileImage: '/hero-avatar.svg',
 };
@@ -34,7 +34,7 @@ export const aboutData = {
     { label: 'Projects Built', value: '6+' },
     { label: 'Leadership Roles', value: '3+' },
     { label: 'Volunteer Roles', value: '4+' },
-    { label: 'Technologies', value: '12+' },
+    { label: 'Technologies', value: '40+' },
   ],
 };
 
@@ -45,12 +45,6 @@ export const educationData = [
     location: 'Toronto, ON',
     period: 'Sep 2025 to Present',
   },
-  {
-    institution: 'White Oaks Secondary School',
-    degree: 'Founder of Math Support Club, Math & Physics Tutor, Executive of Hindu Association',
-    location: 'Oakville, ON',
-    period: 'Sep 2023 to June 2025',
-  },
 ];
 
 export const experienceData = [
@@ -59,7 +53,7 @@ export const experienceData = [
     role: 'AI Engineer Trainee',
     company: 'Trakop',
     location: 'Toronto, ON',
-    period: 'May 2024 to Present',
+    period: 'May 2026 to Present',
     description:
       'Developing AI based solutions for logistics and business automation using Python, TensorFlow, and OpenAI APIs. Working on projects related to inventory forecasting, delivery route optimization, and payment risk analysis while gaining hands on experience with AWS, Power BI, and Git through real world SaaS platform development.',
     tags: ['Python', 'TensorFlow', 'OpenAI APIs', 'AWS', 'Power BI', 'Git'],
@@ -68,7 +62,7 @@ export const experienceData = [
   {
     id: 2,
     role: 'Software Team Member',
-    company: 'University of Toronto Open Source Students',
+    company: 'University of Toronto Open Source Society',
     location: 'St. George, University of Toronto',
     period: 'Jan 2026 to Present',
     description:
@@ -99,7 +93,18 @@ export const experienceData = [
     type: 'work',
   },
   {
-    id: 5,
+    id: 6,
+    role: 'VP Social',
+    company: 'Chestnut Residence Council',
+    location: 'Toronto, ON',
+    period: 'Sep 2025 to Apr 2026',
+    description:
+      'Led the planning and execution of the annual Dinner Dance at Shangri-La Hotel in downtown Toronto, coordinating all logistics including scheduling, vendor communication, and day of operations. Negotiated and finalized contracts with the venue, managed the full event budget, and oversaw all financial details from initial planning through post event reconciliation. Collaborated with council members and residence staff to deliver a successful large scale event for over 200 attendees.',
+    tags: ['Leadership', 'Event Management', 'Budgeting', 'Vendor Relations'],
+    type: 'leadership',
+  },
+  {
+    id: 7,
     role: 'Team Lead, APS111: Engineering Strategies & Practice II',
     company: 'University of Toronto',
     location: 'Toronto, ON',
@@ -131,7 +136,7 @@ export const projectsData = [
       'Built a backend routing engine with priority based, maps based path planning and multi agent coordination for ambulance dispatch. Developed a lightweight REST style API for emergency inputs, ambulance status updates, and routing decisions. Integrated SQLite for persistence and validated logic through a Java based Becker Robots simulation, placing 3rd overall at UTEK 2026.',
     tags: ['Java', 'Becker Robots', 'SQLite', 'REST API'],
     award: '3rd Place, UTEK 2026',
-    github: '#',
+    github: null,
     live: null,
     image: null,
     featured: true,
@@ -143,6 +148,17 @@ export const projectsData = [
       'Designed and developed a full stack backend system using Java Spring Boot with a 3 layer Controller Service Repository architecture. Implemented RESTful APIs for managing restaurants, private chefs, and user search and filter functionality backed by a MySQL relational database. Applied CRUD operations, dependency injection, and modular backend design.',
     tags: ['Java', 'Spring Boot', 'MySQL', 'MVC Architecture'],
     github: 'https://github.com/samarvirgarg/hackathon-FoodChain-Project',
+    live: null,
+    image: null,
+    featured: true,
+  },
+  {
+    id: 6,
+    title: 'UniQuery',
+    description:
+      'Designed and built a cross platform academic query management system for students, professors, TAs, and admins using Flutter and Firebase. Implemented role based access control with Firebase Authentication and Firestore security rules, giving each user role a distinct dashboard and permissions. Built file upload and notification features using Firebase Storage and Firebase Cloud Messaging for real time communication. Tested and debugged the application on a physical Android device, handling edge cases for offline access and varied screen sizes.',
+    tags: ['Flutter', 'Firebase', 'Cloud Firestore', 'Firebase Auth', 'FCM', 'Role-Based Access'],
+    github: 'https://github.com/samarvirgarg/uniquery',
     live: null,
     image: null,
     featured: true,
@@ -211,10 +227,10 @@ export const volunteeringData = [
 ];
 
 export const skillsData = {
-  languages: ['Java', 'Python', 'C/C++', 'SQL (Postgres)', 'JavaScript', 'HTML/CSS'],
-  frameworks: ['Spring Boot', 'Pygame', 'Becker', 'Arduino', 'TensorFlow', 'Pandas', 'NumPy'],
-  tools: ['Git', 'AWS', 'Power BI', 'VS Code', 'Visual Studio', 'IntelliJ', 'Eclipse', 'SQLite', 'MySQL', 'NVIDIA Jetson'],
-  concepts: ['REST APIs', 'OpenAI APIs', 'MVC Architecture', 'Embedded Systems', 'Computer Vision', 'Machine Learning', 'Data Visualization'],
+  languages: ['Java', 'Python', 'C/C++', 'SQL (Postgres)', 'JavaScript', 'Dart', 'HTML/CSS'],
+  frameworks: ['Spring Boot', 'Flutter', 'Firebase', 'TensorFlow', 'Pygame', 'Becker', 'Arduino', 'Pandas', 'NumPy'],
+  tools: ['Git', 'AWS', 'Power BI', 'VS Code', 'Visual Studio', 'IntelliJ', 'Eclipse', 'SQLite', 'MySQL', 'NVIDIA Jetson', 'Android SDK', 'Cloud Firestore'],
+  concepts: ['REST APIs', 'OpenAI APIs', 'MVC Architecture', 'Embedded Systems', 'Computer Vision', 'Machine Learning', 'Data Visualization', 'Role-Based Access Control', 'Firebase Auth', 'Firebase Cloud Messaging', 'Firebase Storage', 'Mobile Development'],
 };
 
 export const interestsData = [

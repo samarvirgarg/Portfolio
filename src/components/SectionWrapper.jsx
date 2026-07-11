@@ -2,12 +2,16 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-export default function SectionWrapper({ id, children, className = '' }) {
+export default function SectionWrapper({ id, children, className = '', alternate = false }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id={id} ref={ref} className={`section-padding relative ${className}`}>
+    <section
+      id={id}
+      ref={ref}
+      className={`section-padding relative ${alternate ? 'theme-surface-light' : ''} ${className}`}
+    >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
